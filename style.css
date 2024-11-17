@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #212121; /* Fundo preto */
+  color: #f4f4f4; /* Texto claro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Evita barras de rolagem desnecessárias */
+}
+
+.container {
+  background-color: #333;
+  width: 100%;
+  max-width: 800px;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #f1c40f;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #f4f4f4;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+#search {
+  padding: 14px 20px;
+  font-size: 1.1rem;
+  border: 1px solid #f1c40f;
+  border-radius: 30px;
+  width: 300px;
+  margin-right: 15px;
+  background-color: #444;
+  color: #f4f4f4;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+#search::placeholder {
+  color: #bbb;
+  font-style: italic;
+}
+
+#search:focus {
+  border-color: #f39c12;
+  outline: none;
+}
+
+button {
+  padding: 14px 25px;
+  font-size: 1.1rem;
+  background-color: #f1c40f;
+  color: #212121;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #f39c12;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.result-box {
+  background-color: #444;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #f1c40f;
+  color: #f4f4f4;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  min-height: 300px; /* Ajustado para o cartaz de filme */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.result-box .film-poster {
+  width: 100%;
+  max-width: 350px; /* Tamanho da imagem do cartaz */
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra na imagem */
+}
+
+.result-box h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f1c40f;
+  margin-bottom: 10px;
+}
+
+.result-box p {
+  font-size: 1.2rem;
+  color: #f4f4f4;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 25px;
+  }
+
+  #search {
+    width: 70%;
+  }
+
+  button {
+    width: 25%;
+  }
+}
