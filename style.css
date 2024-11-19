@@ -112,15 +112,6 @@ button:active {
   flex-direction: column;
 }
 
-.result-box .film-poster {
-  width: 100%;
-  max-width: 350px; /* Tamanho da imagem do cartaz */
-  height: auto;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra na imagem */
-}
-
 .result-box h2 {
   font-size: 2rem;
   font-weight: 700;
@@ -133,18 +124,4 @@ button:active {
   color: #f4f4f4;
   line-height: 1.6;
   margin-bottom: 15px;
-}
-
-@media (max-width: 600px) {
-  .container {
-    padding: 25px;
-  }
-
-  #search {
-    width: 70%;
-  }
-
-  button {
-    width: 25%;
-  }
 }
