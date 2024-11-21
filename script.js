@@ -71,7 +71,7 @@ function movieAPI() {
       duracao: 120,
       ator_principal: 'Chow Yun-fat'
     }
-  ];
+   ];
 
   return {
     listarFilmes: () => filmes,
@@ -80,12 +80,6 @@ function movieAPI() {
       filmes.find(f =>
         f.titulo_filme.toLowerCase().includes(titulo.toLowerCase())
       ) || { mensagem: 'Filme não encontrado' },
-
-    adicionarFilme: novoFilme => {
-      novoFilme.id = filmes.length ? filmes[filmes.length - 1].id + 1 : 1;
-      filmes.push(novoFilme);
-      return { mensagem: 'Filme adicionado com sucesso!', filme: novoFilme };
-    },
   };
 }
 
@@ -105,18 +99,26 @@ function pesquisarFilme() {
   if (filme.mensagem) {
     document.getElementById('resultado').innerHTML = '<p>Filme não encontrado!</p>';
   } else {
-    mostrarFilme(filme);
+    mostrarFilme([filme]);
   }
 }
 
-function mostrarFilme(filme) {
+function mostrarFilme(filmes) {
   const resultadoDiv = document.getElementById('resultado');
-  resultadoDiv.innerHTML = `
-    <div class="filme-info">
-      <h2>${filme.titulo_filme}</h2>
-      <p><span>Idioma:</span> ${filme.idioma}</p>
-      <p><span>Duração:</span> ${filme.duracao} minutos</p>
-      <p><span>Ator Principal:</span> ${filme.ator_principal}</p>
-    </div>
-  `;
+  resultadoDiv.innerHTML = filmes
+    .map(
+      filme => `
+      <div class="card">
+        <img src="${filme.cartaz}" alt="${filme.titulo_filme}">
+        <div class="container">
+          <h4><b>${filme.titulo_filme}</b></h4>
+          <p><strong>Idioma:</strong> ${filme.idioma}</p>
+          <p><strong>Duração:</strong> ${filme.duracao} minutos</p>
+          <p><strong>Ator Principal:</strong> ${filme.ator_principal}</p>
+        </div>
+      </div>
+    `
+    )
+    .join('');
 }
+
